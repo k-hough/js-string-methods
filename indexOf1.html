@@ -1,0 +1,38 @@
+<!--Create an array of strings and a separate single string. Test to see if the single string is contained in each of the strings in the array. For each string where that's the case, add it to a second array.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Exercise</title>
+</head>
+<body>
+
+    <div id="output"></div>
+
+    <script>
+    "use strict";
+
+    var $ = function(id) { return document.getElementById(id); };
+
+    var names = ["Homer", "Marge", "Bart", "Lisa", "Maggie", "arlo", "cccarlo"];
+    var string = "ar";
+
+    var generate = function(array, string) {
+        var answer = [];
+        var x = 0;
+        for (var i = 0; i < array.length; i++) {
+            if (array[i].indexOf(string) >= 0) {
+              answer[x] = array[i];
+              x++;
+            }
+        }
+        return answer;
+    };
+
+    $("output").innerHTML = generate(names, string);
+
+    </script>
+
+</body>
+</html>

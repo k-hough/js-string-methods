@@ -1,0 +1,38 @@
+<!--Create an array of strings and a separate single string. Test to see if the strings in the array begin and end with all the characters in the single string. For each string that does, add it to a second array.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Exercise</title>
+</head>
+<body>
+
+    <div id="output"></div>
+
+    <script>
+    "use strict";
+
+    var $ = function(id) { return document.getElementById(id); };
+
+    var strings = ["HTML", "###CSS###", "###JavaScript###", "#JavaScript#", "##jQuery##", "jQuery", "###jQuery##", "###jQuery###"];
+    var string = "###";
+
+    var generate = function(array, string) {
+        var answer = [];
+        var x = 0;
+        for (var i = 0; i < array.length; i++) {
+            if (string == array[i].substr(0, 3) && string == array[i].substr(-3)) {
+                answer[x] = array[i];
+                x++;
+            }
+        }
+        return answer;
+    };
+
+    $("output").innerHTML = generate(strings, string);
+
+    </script>
+
+</body>
+</html>

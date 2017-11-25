@@ -1,0 +1,31 @@
+<!--This exercise uses string methods. Start with a date string, for example "July 7, 2017". Extract the year as a string.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Exercise</title>
+</head>
+<body>
+
+    <div id="output"></div>
+
+    <script>
+    "use strict";
+
+    var $ = function(id) { return document.getElementById(id); };
+
+    var date = "July 7th, 2017";
+
+    var getYear = function(date) {
+        var position = date.indexOf(",");
+        var year = date.substring(position + 2);
+        return year;
+    };
+
+    $("output").innerHTML = getYear(date);
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Exercise</title>
+</head>
+<body>
+
+    <div id="output"></div>
+
+    <script>
+    "use strict";
+
+    var $ = function(id) { return document.getElementById(id); };
+
+    var name = "_a1_test_a1_";
+    var string = "_a1_";
+
+    var generate = function(name, string) {
+        var answer = "";
+        var strLength = string.length;
+        var nameLength = name.length;
+        if (string === name.substr(0, strLength) && string === name.substr(-strLength)) {
+            answer = name.substr(0, nameLength - strLength);
+            answer = answer.substr(strLength);
+        }
+        return answer;
+    };
+
+    $("output").innerHTML = generate(name, string);
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!--Create an array of strings and a separate single string. Test to see if the strings in the array begin and end with the characters in the single string. For each string that does, extract the substring between the beginning and ending characters and add that substring to a second array.
+
+For example, if the single string is "_a1_", and one of the strings in the array is "_a1_testing_a1_", the substring "testing" would be added to the second array.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Exercise</title>
+</head>
+<body>
+
+    <div id="output"></div>
+
+    <script>
+    "use strict";
+
+    var $ = function(id) { return document.getElementById(id); };
+
+    var names = ["_a1_testing_a1_", "_a2_testing_a2_", "_a1_test_a1_"];
+    var string = "_a1_";
+
+    var generate = function(array, string) {
+        var answer = [];
+        var x = 0;
+        var strLength = string.length;
+
+        for (var i = 0; i < array.length; i++) {
+            var namesLength = array[i].length;
+            if (string === array[i].substr(0, strLength) && string == array[i].substr(-strLength)) {
+                answer[x] = array[i].substr(0, namesLength - strLength);
+                answer[x] = answer[x].substr(strLength);
+                x++;
+            }
+        }
+        return answer;
+    };
+
+    $("output").innerHTML = generate(names, string);
+
+    </script>
+
+</body>
+</html>

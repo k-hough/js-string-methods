@@ -1,0 +1,31 @@
+<!--This exercise uses string methods. Start with a date string, for example "July 7, 2017". Extract the month as a string.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Exercise</title>
+</head>
+<body>
+
+    <div id="output"></div>
+
+    <script>
+    "use strict";
+
+    var $ = function(id) { return document.getElementById(id); };
+
+    var date = "July 7th, 2017";
+
+    var getMonth = function(date) {
+        var position = date.indexOf(" ", 0);
+        var month = date.substring(0, position);
+        return month;
+    };
+
+    $("output").innerHTML = getMonth(date);
+
+    </script>
+
+</body>
+</html>

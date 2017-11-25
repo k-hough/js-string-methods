@@ -1,0 +1,31 @@
+<!--This exercise uses an array method. Start with 2 arrays. Combine the arrays into 1 array.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Exercise</title>
+</head>
+<body>
+
+    <div id="output"></div>
+
+    <script>
+    "use strict";
+
+    var $ = function(id) { return document.getElementById(id); };
+
+    var array1 = ["HTML", "CSS"];
+    var array2 = ["JavaScript", "jQuery"];
+
+    var combineArrays = function(array1, array2) {
+        var answer = array1.concat(array2);
+        return answer;
+    };
+
+    $("output").innerHTML = combineArrays(array1, array2);
+
+    </script>
+
+</body>
+</html>
